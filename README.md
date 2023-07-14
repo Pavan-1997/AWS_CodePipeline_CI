@@ -64,3 +64,5 @@ Performing AWS Continuous Integration all the steps are documented as below:
 Once the pipeline is create give a test commit and see the pipeline to be invoked 
 
 Check the DockerHub it should have the latest image.
+
+![image](https://github.com/Pavan-1997/AWS_CodePipeline_CI/assets/32020205/06f7d573-fb0d-4563-b089-7e153fe2f4a9)
