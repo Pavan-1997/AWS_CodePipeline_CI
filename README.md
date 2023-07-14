@@ -25,35 +25,35 @@ Peforming AWS Continuous Integration
 
 6. To store sensitive information we are using AWS Systems Manager service
 
-Goto AWS Console and search for Systems Manager -> Click on Parameter Store on the left side -> Click on Create Parameter -> Give name like this for our naming convection easier to use /myapp/docker-cred/username -> User Tier as Standard > Select Type as SecureString -> In the Value give the username
-
-Create for Docker username, password and URL (Value : docker.io) by following the above
-
-Now goto IAM roles -> Select the IAM role that was used in Step 5. -> Click on Add Permissions and Click on Attach policies -> Search and select the role name as AmazonSSMFullAccess and click on Add permissions
-
+    Goto AWS Console and search for Systems Manager -> Click on Parameter Store on the left side -> Click on Create Parameter -> Give name like this for our naming convection easier to use /myapp/docker-cred/username -> User Tier as Standard > Select Type as SecureString -> In the Value give the username
+    
+    Create for Docker username, password and URL (Value : docker.io) by following the above
+    
+    Now goto IAM roles -> Select the IAM role that was used in Step 5. -> Click on Add Permissions and Click on Attach policies -> Search and select the role name as AmazonSSMFullAccess and click on Add permissions
+    
 
 7. Now goto Buildspec section -> Select Insert build commands -> Write the YAML file as below by clicking on Switch to editor
 
 - checkout stage will happen automatically as we have already integrated it with GitHub in Step 4.
 
-Once wrting the YAML file click on Create build project
-
-Click on Start build 
-
-If getting error 2023/07/14 18:45:56 Phase context status code: COMMAND_EXECUTION_ERROR Message: Error while executing command: day-14/simple-python-app/. Reason: exit status 126 then follow below step
-
-Give additional permission to the CodeBuild -> Goto the Build projects -> Click on Edit of the project that has been created -> Enviroment -> Click on Override image -> Now check the Enable this flag ... under Priviledged
+    Once wrting the YAML file click on Create build project
+    
+    Click on Start build 
+    
+    If getting error 2023/07/14 18:45:56 Phase context status code: COMMAND_EXECUTION_ERROR Message: Error while executing command: day-14/simple-python-app/. Reason: exit status 126 then follow below step
+    
+    Give additional permission to the CodeBuild -> Goto the Build projects -> Click on Edit of the project that has been created -> Enviroment -> Click on Override image -> Now check the Enable this flag ... under Priviledged
 
 - For automatic starting of the build we will be configuring the AWS CodePipeline lalter which check for commits in AWS CodeCommit and invokes AWS CodeBuild
 
 
 8. Integrating it with CodePipeline to trigger the build automatically
 
-Open CodePipeline from AWS Console -> Click on Create pipeline -> Give Pipeline name -> Use the New service role >  Click on Next -> Select Source provider as Github (Version 2) -> Click on connect to Github -> Give a Connection name and click on Install a new app and then authorize using your GitHUb account -> Click on Connect 
-
-Now give the Repositiory name as sqlonlinux/python_sample_CI_AWS -> Give Branch name as main -> Click on Next 
-
-Now selct the Build provider as AWS CodeBuild -> Select the Project name that you have created earlier -> Click on Next -> As of now skip the Deploy stage and click on Skip deploy stage -> Click on Create pipeline
+    Open CodePipeline from AWS Console -> Click on Create pipeline -> Give Pipeline name -> Use the New service role >  Click on Next -> Select Source provider as Github (Version 2) -> Click on connect to Github -> Give a Connection name and click on Install a new app and then authorize using your GitHUb account -> Click on Connect 
+    
+    Now give the Repositiory name as sqlonlinux/python_sample_CI_AWS -> Give Branch name as main -> Click on Next 
+    
+    Now selct the Build provider as AWS CodeBuild -> Select the Project name that you have created earlier -> Click on Next -> As of now skip the Deploy stage and click on Skip deploy stage -> Click on Create pipeline
 
 Once the pipeline is create give a test commit and see the pipeline to be invoked 
 
