@@ -40,7 +40,7 @@ Performing AWS Continuous Integration all the steps are documented as below
     
     Click on Start build 
     
-    If getting error 2023/07/14 18:45:56 Phase context status code: COMMAND_EXECUTION_ERROR Message: Error while executing command: day-14/simple-python-app/. Reason: exit status 126 then follow below step
+    If getting error "2023/07/14 18:45:56 Phase context status code: COMMAND_EXECUTION_ERROR Message: Error while executing command: day-14/simple-python-app/. Reason: exit status 126" then follow below step
     
     Give additional permission to the CodeBuild -> Goto the Build projects -> Click on Edit of the project that has been created -> Enviroment -> Click on Override image -> Now check the Enable this flag ... under Priviledged
 
