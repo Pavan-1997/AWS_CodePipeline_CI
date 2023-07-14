@@ -1,6 +1,6 @@
 # AWS CodePipeline CI 
 
-Performing AWS Continuous Integration all the steps are documented as below
+Performing AWS Continuous Integration all the steps are documented as below:
 
 1. Login to AWS Console 
 
