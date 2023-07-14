@@ -2,6 +2,8 @@
 
 Performing AWS Continuous Integration all the steps are documented as below:
 
+![image](https://github.com/Pavan-1997/AWS_CodePipeline_CI/assets/32020205/8e202156-2d1a-478d-8132-e07a04b23b1e)
+
 1. Login to AWS Console 
 
 
@@ -30,7 +32,9 @@ Performing AWS Continuous Integration all the steps are documented as below:
     Create for Docker username, password and URL (Value : docker.io) by following the above
     
     Now goto IAM roles -> Select the IAM role that was used in Step 5. -> Click on Add Permissions and Click on Attach policies -> Search and select the role name as AmazonSSMFullAccess and click on Add permissions
-    
+
+![image](https://github.com/Pavan-1997/AWS_CodePipeline_CI/assets/32020205/0e8aa04b-6d8c-485d-b84f-9da7637c0295)
+
 
 7. Now goto Buildspec section -> Select Insert build commands -> Write the YAML file as below by clicking on Switch to editor
 
@@ -55,5 +59,8 @@ Performing AWS Continuous Integration all the steps are documented as below:
     
     Now selct the Build provider as AWS CodeBuild -> Select the Project name that you have created earlier -> Click on Next -> As of now skip the Deploy stage and click on Skip deploy stage -> Click on Create pipeline
 
+![image](https://github.com/Pavan-1997/AWS_CodePipeline_CI/assets/32020205/e012de48-2c02-4651-9ca2-6c3e77cb740d)
+
 Once the pipeline is create give a test commit and see the pipeline to be invoked 
 
+Check the DockerHub it should have the latest image.
