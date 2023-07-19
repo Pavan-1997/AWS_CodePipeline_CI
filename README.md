@@ -1,4 +1,5 @@
 # AWS CodePipeline CI 
+**After implementing the below CI please go to Repo - AWS_CodePipeline_CI_CD (https://github.com/Pavan-1997/AWS_CodePipeline_CI_CD) and implement the CD followed by CI/CD using AWS CodePipleLine**
 
 Performing AWS Continuous Integration all the steps are documented as below:
 
