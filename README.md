@@ -7,7 +7,7 @@ Performing AWS Continuous Integration all the steps are documented as below:
 
 1. Login to AWS Console  
     
- 
+  
 2. Open the CodeBuild tool from AWS Console
 
 
